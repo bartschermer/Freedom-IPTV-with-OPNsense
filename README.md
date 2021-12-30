@@ -64,3 +64,15 @@ On the [**InternalIPTV** interface](/images/InternalIPTV_FWrules.png), the below
 In the above firewall rules I use two aliases:
 1. IGMP_BROADCAST_NETWORKS is set to 224.0.0.0/4
 2. IPTV_STB is set to the static internal IP address of the set-top box on VLAN 40.
+
+## IGMP Proxy
+IGMP proxying must be enabled for the multicast streams to make it through to the set-top box.
+The os-igmp-proxy can be installed in OPNsense via System -> Firmware -> Plugins. Once installed, the IGMP-service can be configured via [Services -> IGMP Proxy](/images/IGMP_Proxy.png).
+
+One upstream and one downstream interface must be configured. If there are multiple IPTV set-top boxes, multiple downstream interfaces can be configured. There can always be only one upstream interface.
+    
+
+|Interface|Type|Network(s)|Description|
+|---|---|---|---|
+|WANIPTV|Upstream|217.166.225.0/24|CanalDigitaal IPTV|
+|InternalIPTV|Downstream|InternalIPTV Network|Internal IPTV|
