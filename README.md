@@ -74,5 +74,5 @@ One upstream and one downstream interface must be configured. If there are multi
 
 |Interface|Type|Network(s)|Description|
 |---|---|---|---|
-|WANIPTV|Upstream|217.166.225.0/24|CanalDigitaal IPTV|
+|WANIPTV|Upstream|217.166.0.0/16|CanalDigitaal IPTV|
 |InternalIPTV|Downstream|InternalIPTV Network|Internal IPTV|
